@@ -1,0 +1,45 @@
+create database pquena_cantina;
+
+use pequena_cantina;
+
+
+create table Funcionario(
+id_funcionario int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nome_funncionario varchar(30) not null
+
+);
+
+create table Cliente(
+id_cliente int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nome_cliente varchar(40) not null
+
+);
+
+create table Categoria(
+id_categoria int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nome_categoria varchar(30)
+
+);
+
+create table SubCategoria(
+id_sub_categoria int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nome_sub_categoria varchar(30),
+id_categoria int,
+FOREIGN KEY (id_categoria) REFERENCES Categoria(id);
+
+);
+
+create table Produto(
+id_produto INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nome_produto VARCHAR(25) NOT NULL,
+preco FLOAT;
+id_sub_categoria INT,
+FOREIGN KEY (id_sub_categoria) REFERENCES SubCategoria(id);
+
+);
+
+create table venda(
+id_venda INT PRIMARY KEY AUTO_IN
+
+
+);

@@ -1,0 +1,30 @@
+comandos Router
+
+Router(config-if)#ip address 192.168.0.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#ip dhcp pool voice
+Router(dhcp-config)#network 192.168.0.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.0.1
+Router(dhcp-config)#option 150 ip 192.168.0.1 
+Router(dhcp-config)#exit
+Router(config)#telephony-service
+Router(config-telephony)#max-dn 6
+Router(config-telephony)#max-ephones 6
+Router(config-telephony)#ip source-address 192.168.0.1 port 2000
+Router(config-telephony)#auto assign 1 to 6
+Router(config-telephony)#exit
+
+comandos switch
+Switch>enable
+Switch#configure terminal
+Switch(config)#interface range fa0/1-6
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport voice vlan 1
+Switch(config-if-range)#exit
+Switch(config)#
+
+Router denovo
+Router(config)#ephone-dn 1
+Router(config-ephone-dn)#number 2001
+
+depois conectar telefone ...

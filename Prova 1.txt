@@ -1,0 +1,28 @@
+create database empresa_1;
+
+use empresa_1;
+
+create table Cargo(
+id_cargo INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nome_cargo varchar(20)
+
+);
+
+
+
+Create table Funcionario(
+
+id_funcionario INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nome_funcionario Varchar(30) NOT NULL,
+sexo_funcionario Char(1),
+data_de_nascimento DATE ,
+salario_funcionario float,
+id_cargo INT,
+
+FOREIGN KEY (id_cargo) REFERENCES Cargo(id)
+
+
+
+
+
+
